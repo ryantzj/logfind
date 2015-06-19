@@ -2,13 +2,15 @@ from sys import argv
 import re
 
 script, filename, keyword = argv
-name = ["this"]
+names = [keyword,'is','meow']
+print "%r" % names
 
 with open(filename) as f:
     for line in f:
-        for line in name:
- 		m = re.match("(^[a-z]+)",line)
-		if m:
-			print(m.groups())
+		print "%r" % line
+		for name in names:
+ 			m = re.match(r'\w+',line)
+			if m:
+				print(m.groups())
 print "Here's your file %r:" % filename
 print "keyword is:", keyword
