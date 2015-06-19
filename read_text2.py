@@ -2,12 +2,13 @@ from sys import argv
 import re
 
 script, filename, keyword = argv
-p = re.compile(r'(?P<word>\b\w+\b)')
+name = ["this"]
 
 with open(filename) as f:
     for line in f:
-        result = p.search(line)
-        print "search found %r:" % result.group('word')
-
+        for line in name:
+ 		m = re.match("(^[a-z]+)",line)
+		if m:
+			print(m.groups())
 print "Here's your file %r:" % filename
 print "keyword is:", keyword
