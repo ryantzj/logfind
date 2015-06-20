@@ -5,8 +5,9 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('filename')
 parser.add_argument('keyword', nargs='+')
+parser.add_argument('-o',dest='rex',action='store_const',const="|",default=" ")
 args = parser.parse_args()
-keywords = ' '.join(args.keyword)
+keywords = (args.rex).join(args.keyword)
 print(keywords)
 p = re.compile(keywords,re.I)
 
