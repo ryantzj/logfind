@@ -13,7 +13,6 @@ p = re.compile(keywords,re.I)
 
 with open(args.filename) as f:
 	for line in f:
-		print(line)
 		m = p.findall(line)
      		print(m)
 # print "Here's your file %r:" % filename
